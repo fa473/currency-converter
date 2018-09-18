@@ -8,6 +8,7 @@ import { ClearButton } from '../components/Button/'
 import { LastConverted } from '../components/Text'
 import { Header } from '../components/Header'
 import { swapCurrency, changeCurrencyAmount } from '../actions/currencies'
+import { connect } from 'react-redux'
 
 const TEMP_BASE_CURRENCY = 'USD'
 const TEMP_QUOTE_CURRENCY = 'GBP'
@@ -18,7 +19,8 @@ const TEMP_CONVERSION_DATE = new Date()
 
 class Home extends Component {
   static propTypes = {
-    navigation: PropTypes.object
+    navigation: PropTypes.object,
+    dispatch: PropTypes.func
   }
   handlePressBaseCurrency = () => {
     this.props.navigation.navigate('CurrencyList', { title: 'Base Currency' })
@@ -29,11 +31,11 @@ class Home extends Component {
   }
 
   handleTextChange = (amount) => {
-    console.log(changeCurrencyAmount(amount))
+    this.props.dispatch(changeCurrencyAmount(amount))
   }
 
   handleSwapCurrency = () => {
-    console.log(swapCurrency())
+    this.props.dispatch(swapCurrency())
   }
 
   handleOptionsPress = () => {
@@ -76,4 +78,4 @@ class Home extends Component {
   }
 }
 
-export default Home
+export default connect()(Home)
