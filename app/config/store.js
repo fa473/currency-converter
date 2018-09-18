@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from 'redux'
-import logger from 'redux-logger'
+// import logger from 'redux-logger'
 import reducer from '../reducers'
 import createSagaMiddleware from 'redux-saga'
 import rootSaga from './sagas'
@@ -7,9 +7,9 @@ import rootSaga from './sagas'
 const sagaMiddleware = createSagaMiddleware()
 const middleware = [sagaMiddleware]
 
-if (process.env.NODE_ENV === 'development') {
-  middleware.push(logger)
-}
+// if (process.env.NODE_ENV === 'development') {
+//   middleware.push(logger)
+// }
 
 export default createStore(reducer, applyMiddleware(...middleware))
 
