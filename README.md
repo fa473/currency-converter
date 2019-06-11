@@ -1,3 +1,5 @@
+![screenshot](https://user-images.githubusercontent.com/25490907/59243198-8bb09580-8bc3-11e9-9e0d-953c290005dc.gif)
+
 # Free React Native Course!
 
 Want the step-by-step on building this app? Checkout my [free video course](http://learn.handlebarlabs.com/p/react-native-basics-build-a-currency-converter) that goes alongside this repo. You'll love it! :)
